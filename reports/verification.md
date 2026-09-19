@@ -7,7 +7,7 @@
 
 - Windows, Python 3.13.1. A new ignored `.verify-venv` began with only `pip==24.3.1`; declared dependencies were installed from `requirements.txt`. A second new `.venv` was created inside an ignored clean release copy. Both passed `pip check`.
 - Tested key versions: NumPy 2.4.3, pandas 3.0.5, scikit-learn 1.9.0, FastAPI 0.141.1, Streamlit 1.63.0, nbclient 0.10.4, ipykernel 7.1.0. The complete direct dependency set is pinned in `requirements.txt`.
-- `git rev-parse --show-toplevel` and `git status --short` both returned “not a git repository” from `FraudDetection`; this folder is not inside a parent Git worktree. Tracked, staged, historical, and whitespace diff checks were therefore unavailable. Git was not initialized.
+- During the original release-copy verification, `git rev-parse --show-toplevel` and `git status --short` returned “not a git repository.” Git was initialized afterward. The current follow-up review found `main` tracking `origin/main` at `b37d19c` (`Initial Commit`), with the intended 39 public files tracked and a clean baseline before the README updates. A read-only `git ls-remote origin HEAD` reached GitHub and returned the same commit. Ownership checks required a command-scoped `safe.directory` override in this sandbox; no global Git setting, remote, commit, or push was changed here. Push credentials were not tested.
 - Original CSV SHA-256 before and after all work: `0a7d71bf1b07b6ace30e531a6ae460e796ec2e4dc86f976c6a7f7d08e1b68bb1`. The temporary release copy received a local copy with the same checksum solely for verification.
 
 ## Executed commands and outcomes
@@ -69,4 +69,4 @@ The selected class-weighted logistic model had training CV average precision **0
 1. Confirm the CSV's provenance and redistribution rights. Keep it out of a public repository until then; a new user must supply a compatible file.
 2. Obtain a truly independent labelled holdout before making final performance or operational claims.
 3. With a working Docker daemon, run `docker compose build`, `docker compose up -d`, a container API prediction, and a UI submission; then `docker compose down`. These checks remain **BLOCKED**, not passed.
-4. Review the intended public files and establish Git hosting separately. This directory had no Git repository; no initialization, remote change, commit, or push was performed.
+4. Review and commit the current documentation changes before pushing `main` to the already configured `origin`. Confirm the destination and credentials with your own Git session. No commit or push was performed during this follow-up review.

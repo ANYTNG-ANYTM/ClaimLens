@@ -1,8 +1,21 @@
-# Insurance claim review model
+# ClaimLens
 
-This repository trains a binary classifier from an insurance claims CSV and scores completed claim records for **human review**. The positive label is `Y` (`fraud_reported`). A model flag is a review aid, not proof of fraud. Use the model only after an initial assessor has recorded incident severity and claim details, and before a fraud decision is made.
+**Insurance claim review with scikit-learn, FastAPI, and Streamlit.** ClaimLens trains on a locally supplied insurance claims CSV and scores completed claim records for human fraud review. It includes reproducible data checks, exploratory analysis, model comparison, a saved inference pipeline, an API, and a simple web interface.
 
-The implementation includes data checks, a fixed split, development-only EDA, cross-validated model comparison, a saved preprocessing and classifier pipeline, a validation-selected threshold, FastAPI inference, a Streamlit form, and Docker service definitions. It does not establish operational accuracy, fairness, or a calibrated probability of real-world fraud.
+| Project snapshot | Verified value |
+| --- | --- |
+| Dataset | 1,000 claims; 247 labelled `Y` (fraud), 753 labelled `N` |
+| Selected model | Class-weighted logistic regression |
+| Review threshold | 0.34, selected on validation data |
+| Training CV average precision | 0.608 mean across three folds |
+| Intended use | Review assistance after initial damage assessment |
+
+![Fraud label distribution in the development partitions](reports/figures/target_distribution.png)
+
+> [!IMPORTANT]
+> A flag is **not proof of fraud**. The reported test result is exploratory because an earlier result from the same test partition was viewed before the severity feature was added. A new independent dataset is needed for an unbiased final estimate.
+
+The model score is uncalibrated, and this project does not establish operational accuracy or fairness. The original CSV is excluded from Git because its redistribution rights are unknown; users must supply a compatible file locally.
 
 ## Workflow
 
@@ -23,7 +36,7 @@ flowchart LR
 
 The API and UI use the same `src.inference.predict_record` path. Imputation, one-hot encoding, and logistic scaling live inside the fitted scikit-learn pipeline. The API loads the saved bundle once per process; requests do not retrain or refit anything.
 
-## Public repository layout
+## Repository layout
 
 | Path | Purpose |
 | --- | --- |
@@ -50,7 +63,7 @@ The source, sampling process, label audit, and redistribution rights of this CSV
 
 ## Setup and quick start
 
-The full verification used a **fresh Python 3.13.1 virtual environment on Windows** and the exact versions in [requirements.txt](requirements.txt). Python 3.13 is the documented target. Run these commands from the project root. The Windows instructions were exercised with an isolated `.verify-venv`; `.venv` below is the equivalent name for a new checkout. Linux/macOS commands are provided for convenience and were **not executed** here.
+The full verification used **fresh Python 3.13.1 virtual environments on Windows** and the exact versions in [requirements.txt](requirements.txt). Python 3.13 is the documented target. Run these commands from the project root. The `.venv` layout below was tested in a clean release copy. Linux/macOS commands are provided for convenience and were **not executed** here.
 
 ### Windows PowerShell
 
@@ -178,4 +191,4 @@ Run `python -m pytest -q` with your environment's Python after generating the bu
 - Docker failure: check `docker info` and daemon availability. Compose parsing alone does not verify images or containers.
 - Model performance: the exploratory test, small sample, unknown sampling and label process, and unverified score calibration preclude operational claims. Human review is required.
 
-The local CSV, processed partitions, model bundle, identifier-bearing private audit, virtual environments, logs, archive, and historical notebook/figure material are excluded by [.gitignore](.gitignore); the Docker context has its own [.dockerignore](.dockerignore). Public reports contain aggregates and a synthetic request. No project or dataset license or required attribution was discoverable in the inspected project files, so none is invented here. No Git repository was present in or above this folder during verification; no commit, remote change, or push was made.
+The local CSV, processed partitions, model bundle, identifier-bearing private audit, virtual environments, logs, archive, and historical notebook/figure material are excluded by [.gitignore](.gitignore); the Docker context has its own [.dockerignore](.dockerignore). Public reports contain aggregates and a synthetic request. No project or dataset license or required attribution was discoverable in the inspected project files, so none is invented here. If you want others to reuse the code, choose a project license separately after reviewing its terms.
