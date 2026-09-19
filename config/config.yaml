@@ -1,0 +1,39 @@
+dataset: data/dataset/insurance_claims.csv
+target: fraud_reported
+seed: 42
+test_size: 0.20
+validation_size: 0.20
+cv_folds: 3
+selection_metric: average_precision
+threshold_metric: f2
+numeric_features:
+  - months_as_customer
+  - policy_annual_premium
+  - policy_deductable
+  - umbrella_limit
+  - capital-gains
+  - capital-loss
+  - incident_hour_of_the_day
+  - number_of_vehicles_involved
+  - bodily_injuries
+  - witnesses
+  - injury_claim
+  - property_claim
+  - vehicle_claim
+  - auto_year
+categorical_features:
+  - policy_state
+  - policy_csl
+  - insured_education_level
+  - insured_occupation
+  - insured_hobbies
+  - insured_relationship
+  - incident_type
+  - collision_type
+  - incident_severity
+  - authorities_contacted
+  - incident_state
+  - incident_city
+  - property_damage
+  - auto_make
+  - auto_model

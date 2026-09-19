@@ -1,0 +1,85 @@
+{
+  "note": "Conditional associations of transformed features; not causal effects.",
+  "top_absolute_coefficients": [
+    {
+      "feature": "categorical__insured_hobbies_chess",
+      "coefficient": 3.5485473441377766
+    },
+    {
+      "feature": "categorical__insured_hobbies_cross-fit",
+      "coefficient": 3.493359747574903
+    },
+    {
+      "feature": "categorical__incident_severity_Major Damage",
+      "coefficient": 2.5779995363933677
+    },
+    {
+      "feature": "categorical__insured_occupation_handlers-cleaners",
+      "coefficient": -1.4820754575550539
+    },
+    {
+      "feature": "categorical__insured_hobbies_sleeping",
+      "coefficient": -1.4281657428247296
+    },
+    {
+      "feature": "categorical__insured_hobbies_exercise",
+      "coefficient": -1.1286382318802024
+    },
+    {
+      "feature": "categorical__auto_model_Civic",
+      "coefficient": 0.9994561630864893
+    },
+    {
+      "feature": "categorical__auto_model_CRV",
+      "coefficient": -0.9905412384847392
+    },
+    {
+      "feature": "categorical__auto_model_Pathfinder",
+      "coefficient": -0.9789176210377504
+    },
+    {
+      "feature": "categorical__insured_hobbies_kayaking",
+      "coefficient": -0.9617407488745391
+    },
+    {
+      "feature": "categorical__auto_model_Wrangler",
+      "coefficient": -0.9573118662099381
+    },
+    {
+      "feature": "categorical__incident_severity_Minor Damage",
+      "coefficient": -0.955598707857831
+    },
+    {
+      "feature": "categorical__insured_hobbies_movies",
+      "coefficient": -0.9410572937659656
+    },
+    {
+      "feature": "categorical__insured_hobbies_dancing",
+      "coefficient": -0.9325685170605384
+    },
+    {
+      "feature": "categorical__incident_severity_Trivial Damage",
+      "coefficient": -0.8960396279630354
+    },
+    {
+      "feature": "categorical__auto_model_Grand Cherokee",
+      "coefficient": 0.8893857587328226
+    },
+    {
+      "feature": "categorical__incident_state_PA",
+      "coefficient": -0.8619202473164861
+    },
+    {
+      "feature": "categorical__auto_model_Malibu",
+      "coefficient": -0.8043361422424177
+    },
+    {
+      "feature": "categorical__insured_hobbies_yachting",
+      "coefficient": 0.7970099545591711
+    },
+    {
+      "feature": "categorical__insured_hobbies_golf",
+      "coefficient": -0.7416414222076692
+    }
+  ]
+}

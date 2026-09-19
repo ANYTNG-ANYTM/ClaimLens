@@ -1,0 +1,171 @@
+{
+  "selected_model": "logistic_balanced",
+  "threshold": 0.34,
+  "seed": 42,
+  "cv_folds": 3,
+  "training_rows": 600,
+  "validation_rows": 200,
+  "test_rows": 200,
+  "cv_comparison": {
+    "dummy_prior": {
+      "cv_average_precision_mean": 0.24833333333333332,
+      "cv_average_precision_std": 0.002886751345948131,
+      "cv_folds": [
+        0.245,
+        0.25,
+        0.25
+      ],
+      "cv_time_seconds": 0.078
+    },
+    "logistic": {
+      "cv_average_precision_mean": 0.5997368368705712,
+      "cv_average_precision_std": 0.06459976127980191,
+      "cv_folds": [
+        0.6267044371382802,
+        0.5260227241087866,
+        0.6464833493646467
+      ],
+      "cv_time_seconds": 0.104
+    },
+    "logistic_balanced": {
+      "cv_average_precision_mean": 0.6077477443638468,
+      "cv_average_precision_std": 0.06906899786620448,
+      "cv_folds": [
+        0.6318494268074992,
+        0.5298572635334933,
+        0.661536542750548
+      ],
+      "cv_time_seconds": 0.151
+    },
+    "random_forest": {
+      "cv_average_precision_mean": 0.566728396377194,
+      "cv_average_precision_std": 0.024657519606844744,
+      "cv_folds": [
+        0.541613963766056,
+        0.5676691489726924,
+        0.5909020763928337
+      ],
+      "cv_time_seconds": 1.139
+    },
+    "random_forest_balanced": {
+      "cv_average_precision_mean": 0.5575987510050362,
+      "cv_average_precision_std": 0.025276755517462578,
+      "cv_folds": [
+        0.5685626647369201,
+        0.5286911924125766,
+        0.5755423958656121
+      ],
+      "cv_time_seconds": 1.611
+    },
+    "hist_gradient_boosting": {
+      "cv_average_precision_mean": 0.5411417282373397,
+      "cv_average_precision_std": 0.060034484132946715,
+      "cv_folds": [
+        0.578776768479906,
+        0.47190752343167514,
+        0.572740892800438
+      ],
+      "cv_time_seconds": 2.071
+    }
+  },
+  "validation_selected_threshold": {
+    "threshold": 0.34,
+    "precision_fraud": 0.6081081081081081,
+    "recall_fraud": 0.9183673469387755,
+    "f1_fraud": 0.7317073170731707,
+    "f2_fraud": 0.8333333333333334,
+    "roc_auc": 0.8972834166779294,
+    "average_precision": 0.735148194377123,
+    "confusion_matrix_N_Y": [
+      [
+        122,
+        29
+      ],
+      [
+        4,
+        45
+      ]
+    ],
+    "support": {
+      "N": 151,
+      "Y": 49
+    }
+  },
+  "validation_threshold_0_5": {
+    "threshold": 0.5,
+    "precision_fraud": 0.65625,
+    "recall_fraud": 0.8571428571428571,
+    "f1_fraud": 0.7433628318584071,
+    "f2_fraud": 0.8076923076923077,
+    "roc_auc": 0.8972834166779294,
+    "average_precision": 0.735148194377123,
+    "confusion_matrix_N_Y": [
+      [
+        129,
+        22
+      ],
+      [
+        7,
+        42
+      ]
+    ],
+    "support": {
+      "N": 151,
+      "Y": 49
+    }
+  },
+  "test_selected_threshold": {
+    "threshold": 0.34,
+    "precision_fraud": 0.5277777777777778,
+    "recall_fraud": 0.7755102040816326,
+    "f1_fraud": 0.628099173553719,
+    "f2_fraud": 0.7089552238805971,
+    "roc_auc": 0.8201108257872686,
+    "average_precision": 0.539681184657088,
+    "confusion_matrix_N_Y": [
+      [
+        117,
+        34
+      ],
+      [
+        11,
+        38
+      ]
+    ],
+    "support": {
+      "N": 151,
+      "Y": 49
+    }
+  },
+  "test_threshold_0_5": {
+    "threshold": 0.5,
+    "precision_fraud": 0.5862068965517241,
+    "recall_fraud": 0.6938775510204082,
+    "f1_fraud": 0.6355140186915887,
+    "f2_fraud": 0.6692913385826772,
+    "roc_auc": 0.8201108257872686,
+    "average_precision": 0.539681184657088,
+    "confusion_matrix_N_Y": [
+      [
+        127,
+        24
+      ],
+      [
+        15,
+        34
+      ]
+    ],
+    "support": {
+      "N": 151,
+      "Y": 49
+    }
+  },
+  "versions": {
+    "python": "3.13.1",
+    "numpy": "2.4.3",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.0",
+    "joblib": "1.6.0"
+  },
+  "test_status": "Exploratory: an earlier test result was viewed before severity was added."
+}

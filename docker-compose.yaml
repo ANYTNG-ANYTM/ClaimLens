@@ -1,0 +1,25 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/api/dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./models:/app/models:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/ready', timeout=2)"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+  streamlit:
+    build:
+      context: .
+      dockerfile: docker/streamlit/dockerfile
+    environment:
+      FRAUD_API_URL: http://api:8080
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "8501:8501"

@@ -1,0 +1,150 @@
+{
+  "development_rows": 800,
+  "development_fraud": 198,
+  "severity": [
+    {
+      "incident_severity": "Trivial Damage",
+      "count": 75,
+      "fraud_rate": 0.08
+    },
+    {
+      "incident_severity": "Minor Damage",
+      "count": 281,
+      "fraud_rate": 0.099644128113879
+    },
+    {
+      "incident_severity": "Total Loss",
+      "count": 225,
+      "fraud_rate": 0.14666666666666667
+    },
+    {
+      "incident_severity": "Major Damage",
+      "count": 219,
+      "fraud_rate": 0.5981735159817352
+    }
+  ],
+  "hobbies": [
+    {
+      "insured_hobbies": "golf",
+      "count": 44,
+      "fraud_rate": 0.06818181818181818
+    },
+    {
+      "insured_hobbies": "kayaking",
+      "count": 46,
+      "fraud_rate": 0.08695652173913043
+    },
+    {
+      "insured_hobbies": "dancing",
+      "count": 39,
+      "fraud_rate": 0.10256410256410256
+    },
+    {
+      "insured_hobbies": "camping",
+      "count": 39,
+      "fraud_rate": 0.10256410256410256
+    },
+    {
+      "insured_hobbies": "exercise",
+      "count": 42,
+      "fraud_rate": 0.14285714285714285
+    },
+    {
+      "insured_hobbies": "movies",
+      "count": 46,
+      "fraud_rate": 0.15217391304347827
+    },
+    {
+      "insured_hobbies": "sleeping",
+      "count": 32,
+      "fraud_rate": 0.15625
+    },
+    {
+      "insured_hobbies": "bungie-jumping",
+      "count": 44,
+      "fraud_rate": 0.1590909090909091
+    },
+    {
+      "insured_hobbies": "basketball",
+      "count": 25,
+      "fraud_rate": 0.16
+    },
+    {
+      "insured_hobbies": "skydiving",
+      "count": 43,
+      "fraud_rate": 0.20930232558139536
+    },
+    {
+      "insured_hobbies": "video-games",
+      "count": 38,
+      "fraud_rate": 0.21052631578947367
+    },
+    {
+      "insured_hobbies": "reading",
+      "count": 54,
+      "fraud_rate": 0.2222222222222222
+    },
+    {
+      "insured_hobbies": "paintball",
+      "count": 52,
+      "fraud_rate": 0.23076923076923078
+    },
+    {
+      "insured_hobbies": "hiking",
+      "count": 39,
+      "fraud_rate": 0.2564102564102564
+    },
+    {
+      "insured_hobbies": "board-games",
+      "count": 35,
+      "fraud_rate": 0.2571428571428571
+    },
+    {
+      "insured_hobbies": "base-jumping",
+      "count": 40,
+      "fraud_rate": 0.275
+    },
+    {
+      "insured_hobbies": "yachting",
+      "count": 39,
+      "fraud_rate": 0.3333333333333333
+    },
+    {
+      "insured_hobbies": "polo",
+      "count": 37,
+      "fraud_rate": 0.35135135135135137
+    },
+    {
+      "insured_hobbies": "cross-fit",
+      "count": 28,
+      "fraud_rate": 0.8571428571428571
+    },
+    {
+      "insured_hobbies": "chess",
+      "count": 38,
+      "fraud_rate": 0.868421052631579
+    }
+  ],
+  "full_data_quality": {
+    "rows": 1000,
+    "columns": 40,
+    "duplicate_rows": 0,
+    "constant_columns": [
+      "_c39"
+    ],
+    "question_mark_by_column": {
+      "collision_type": 178,
+      "property_damage": 360,
+      "police_report_available": 343
+    },
+    "bad_date_order": 1,
+    "claim_sum_mismatch": 0
+  },
+  "notes": [
+    "Target associations use development rows only.",
+    "Policy number is unique and excluded from modelling.",
+    "Total claim equals the sum of component claims in every row and is excluded.",
+    "Severity has a strong label association and requires availability at intended review time.",
+    "The CSV has no verified provenance, sampling design, or label audit. Associations are not causal."
+  ]
+}
